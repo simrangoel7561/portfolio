@@ -1,0 +1,150 @@
+.capabilities {
+  padding: 6rem 2rem;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #1F365C;
+  margin: 0 0 0.5rem 0;
+}
+
+.subtitle {
+  font-size: 1.125rem;
+  color: #6b6375;
+  margin: 0;
+}
+
+.capabilitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.capabilityCard {
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+.capabilityCard.visible {
+  animation: slideUp 0.6s ease forwards;
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.capabilityCard:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.15);
+}
+
+.cardTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: #1F365C;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #8C3B52;
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.skillItem {
+  padding: 0.5rem 0;
+  color: #6b6375;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  position: relative;
+  padding-left: 1.5rem;
+}
+
+.skillItem::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #8C3B52;
+  font-weight: bold;
+}
+
+/* Digital Tools Section */
+.toolsSection {
+  margin-top: 5rem;
+  text-align: center;
+}
+
+.toolsTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #1F365C;
+  margin: 0 0 2rem 0;
+}
+
+.toolsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.toolBadge {
+  background: #ffffff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 50px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: #1F365C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, background 0.3s ease, color 0.3s ease;
+}
+
+.toolBadge:hover {
+  transform: translateY(-4px);
+  background: #8C3B52;
+  color: #ffffff;
+  box-shadow: 0 6px 16px rgba(140, 59, 82, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .capabilities {
+    padding: 4rem 1.5rem;
+  }
+  
+  .capabilitiesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .toolsGrid {
+    gap: 0.75rem;
+  }
+  
+  .toolBadge {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+}

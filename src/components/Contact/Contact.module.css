@@ -1,0 +1,89 @@
+.contact {
+  padding: 6rem 2rem;
+  background: #f8f9fa;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #1F365C;
+  margin: 0 0 3rem 0;
+}
+
+.contactCard {
+  background: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #1F365C;
+  margin: 0 0 0.5rem 0;
+}
+
+.role {
+  font-size: 1.125rem;
+  color: #6b6375;
+  margin: 0 0 2rem 0;
+}
+
+.buttonGroup {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.contactButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 2rem;
+  background: #1F365C;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(31, 54, 92, 0.2);
+}
+
+.contactButton:hover {
+  background: #8C3B52;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(140, 59, 82, 0.3);
+}
+
+.icon {
+  font-size: 1.25rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .contact {
+    padding: 4rem 1.5rem;
+  }
+  
+  .contactCard {
+    padding: 2rem 1.5rem;
+  }
+  
+  .buttonGroup {
+    flex-direction: column;
+  }
+  
+  .contactButton {
+    width: 100%;
+    justify-content: center;
+  }
+}

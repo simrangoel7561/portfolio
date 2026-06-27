@@ -1,0 +1,177 @@
+.about {
+  padding: 6rem 2rem;
+  background: #ffffff;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sectionTitle {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 500;
+  color: #1F365C;
+  margin: 0 0 2rem 0;
+  text-align: center;
+}
+
+.philosophy {
+  font-size: clamp(1.125rem, 2vw, 1.5rem);
+  line-height: 1.8;
+  color: #6b6375;
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto 5rem;
+}
+
+.subsectionTitle {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: #1F365C;
+  margin: 4rem 0 2rem 0;
+  text-align: center;
+}
+
+/* Areas of Interest */
+.areasGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.areaCard {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.areaCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.areaIcon {
+  font-size: 1.5rem;
+  flex-shrink: 0;
+}
+
+.areaLabel {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #1F365C;
+}
+
+/* Professional Values */
+.valuesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.valueCard {
+  background: #f8f9fa;
+  padding: 2rem;
+  border-radius: 16px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.valueCard:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.valueIcon {
+  font-size: 3rem;
+}
+
+.valueLabel {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1F365C;
+}
+
+/* Policy Framework */
+.frameworkContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  padding: 2rem;
+  background: #f8f9fa;
+  border-radius: 16px;
+}
+
+.frameworkStep {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.stepBox {
+  background: #ffffff;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  color: #1F365C;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  min-width: 120px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.stepBox:hover {
+  transform: scale(1.05);
+  background: #8C3B52;
+  color: #ffffff;
+}
+
+.stepArrow {
+  font-size: 1.5rem;
+  color: #8C3B52;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .about {
+    padding: 4rem 1.5rem;
+  }
+  
+  .areasGrid,
+  .valuesGrid {
+    grid-template-columns: 1fr;
+  }
+  
+  .frameworkContainer {
+    flex-direction: column;
+    padding: 1.5rem;
+  }
+  
+  .stepArrow {
+    transform: rotate(90deg);
+  }
+  
+  .frameworkStep {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .stepBox {
+    width: 100%;
+  }
+}

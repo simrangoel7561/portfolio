@@ -1,0 +1,217 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 4rem 2rem;
+  position: relative;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.backgroundPattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.geometricShape {
+  position: absolute;
+  background: #f5f5f5;
+  opacity: 0.5;
+}
+
+.geometricShape:nth-child(1) {
+  width: 300px;
+  height: 300px;
+  top: 10%;
+  right: 5%;
+  border-radius: 16px;
+  transform: rotate(15deg);
+}
+
+.geometricShape:nth-child(2) {
+  width: 200px;
+  height: 200px;
+  bottom: 15%;
+  left: 8%;
+  border-radius: 16px;
+  transform: rotate(-10deg);
+}
+
+.geometricShape:nth-child(3) {
+  width: 150px;
+  height: 150px;
+  top: 60%;
+  right: 15%;
+  border-radius: 16px;
+  transform: rotate(25deg);
+}
+
+.container {
+  max-width: 1200px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.content.fadeIn {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.textContent {
+  flex: 1;
+  max-width: 600px;
+}
+
+.name {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+  color: #1F365C;
+  letter-spacing: -0.02em;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  color: #6b6375;
+}
+
+.statement {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: #1F365C;
+}
+
+.statement::first-line {
+  color: #8C3B52;
+}
+
+.profileImage {
+  flex: 0 0 400px;
+  max-width: 400px;
+}
+
+.profileImg {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.profileImg:hover {
+  transform: scale(1.02);
+}
+
+.profilePlaceholder {
+  width: 100%;
+  aspect-ratio: 3/4;
+  background: linear-gradient(135deg, #1F365C 0%, #8C3B52 100%);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.profilePlaceholder:hover {
+  transform: scale(1.02);
+}
+
+.initials {
+  font-size: 6rem;
+  font-weight: 700;
+  color: #ffffff;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.scrollIndicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.scrollArrow {
+  font-size: 2rem;
+  animation: pulse 2s ease-in-out infinite;
+  color: #6b6375;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(10px);
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+    text-align: center;
+    gap: 3rem;
+  }
+  
+  .textContent {
+    max-width: 100%;
+  }
+  
+  .profileImage {
+    flex: 0 0 300px;
+    max-width: 300px;
+  }
+  
+  .geometricShape:nth-child(1) {
+    width: 200px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding: 3rem 1.5rem;
+  }
+  
+  .content {
+    gap: 2rem;
+  }
+  
+  .profileImage {
+    flex: 0 0 250px;
+    max-width: 250px;
+  }
+  
+  .geometricShape {
+    display: none;
+  }
+}
