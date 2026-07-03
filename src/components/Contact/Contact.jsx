@@ -13,7 +13,7 @@ function Contact() {
           
           <div className={styles.buttonGroup}>
             <a 
-              href="https://linkedin.com" 
+              href="https://www.linkedin.com/in/simran-goel-814b63210/" 
               target="_blank" 
               rel="noopener noreferrer"
               className={styles.contactButton}
@@ -23,7 +23,7 @@ function Contact() {
             </a>
             
             <a 
-              href="mailto:contact@simrangoel.com" 
+              href="mailto:simrangoel7561@gmail.com" 
               className={styles.contactButton}
             >
               <span className={styles.icon}>✉️</span>
