@@ -8,45 +8,65 @@ function Hero() {
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
-    // Trigger fade-in animation on mount
     setIsVisible(true);
   }, []);
 
+  const scrollTo = (id) => {
+    const element = document.querySelector(id);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   return (
     <section className={styles.hero} id="home">
-      <div className={styles.backgroundPattern}>
-        <div className={styles.geometricShape}></div>
-        <div className={styles.geometricShape}></div>
-        <div className={styles.geometricShape}></div>
-      </div>
-      
+      <div className={styles.gridBg} />
       <div className={styles.container}>
-        <div className={`${styles.content} ${isVisible ? styles.fadeIn : ''}`}>
-          <div className={styles.textContent}>
+        <div className={`${styles.content} ${isVisible ? styles.visible : ''}`}>
+          <div className={styles.textCol}>
+            <p className={styles.greeting}>Policy Analyst &amp; Researcher</p>
             <h1 className={styles.name}>{personalInfo.name}</h1>
-            <p className={styles.subtitle}>{personalInfo.tagline}</p>
-            <h2 className={styles.statement}>{personalInfo.heroStatement}</h2>
+            <p className={styles.statement}>
+              Shaping evidence-based public policy decisions through rigorous research, 
+              strategic communication, and institutional collaboration.
+            </p>
+            <div className={styles.ctaGroup}>
+              <button
+                className={styles.ctaPrimary}
+                onClick={() => scrollTo('#capabilities')}
+              >
+                View Research
+                <span className={styles.ctaArrow}>→</span>
+              </button>
+              <button
+                className={styles.ctaSecondary}
+                onClick={() => scrollTo('#contact')}
+              >
+                Get in Touch
+              </button>
+            </div>
+            <div className={styles.tagline}>
+              <span className={styles.taglineDot} />
+              {personalInfo.tagline}
+            </div>
           </div>
-          
-          <div className={styles.profileImage}>
+          <div className={styles.imageCol}>
             {!imageError ? (
-              <img 
-                src={profilePhoto}
-                alt={`${personalInfo.name} - Professional profile`}
-                className={styles.profileImg}
-                onError={() => setImageError(true)}
-              />
+              <div className={styles.imageFrame}>
+                <img
+                  src={profilePhoto}
+                  alt={`${personalInfo.name} — Policy Analyst`}
+                  className={styles.profileImg}
+                  onError={() => setImageError(true)}
+                />
+              </div>
             ) : (
-              <div className={styles.profilePlaceholder}>
-                <div className={styles.initials}>SG</div>
+              <div className={styles.imagePlaceholder}>
+                <span className={styles.initials}>SG</span>
               </div>
             )}
           </div>
         </div>
-      </div>
-      
-      <div className={styles.scrollIndicator}>
-        <div className={styles.scrollArrow}>↓</div>
       </div>
     </section>
   );

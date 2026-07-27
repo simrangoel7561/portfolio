@@ -269,23 +269,62 @@ export const education = {
 };
 
 export const publications = {
-  title: "Publications & Thought Leadership",
-  description: "Publishing research, articles, and creative works to promote evidence-based dialogue, public awareness, and knowledge dissemination.",
-  items: [
-    {
-      title: "Women to Women",
-      year: 2025,
-      type: "Sole Author",
-      description: "Published collection of original essays, stories, poems, and reflections exploring empathy, solidarity, women's leadership, and social change."
-    },
+  title: "Publications & Research",
+  description: "Selected published, academic and professional work across governance, gender policy, political economy and international affairs.",
+  book: {
+    title: "Women to Women",
+    type: "Sole Author",
+    description: "A collection of essays, stories, poems and reflections exploring female companionship, empathy, solidarity, women's leadership and human relationships.",
+    url: "https://amzn.in/d/0a6TZR16",
+    image: "w2w-kuchu.jpg"
+  },
+  researchPapers: [
     {
       title: "Policy Fragmentation in Regulating Menstrual Product Safety in India",
-      type: "Master's Research",
-      description: "Examining governance, institutional coordination, and public health policy."
+      tags: ["Institutional fragmentation", "Public-health governance", "Regulatory coordination", "Implementation"]
+    },
+    {
+      title: "Blood, Belief and the State: Comparative Menstrual Policy Across Countries",
+      tags: ["Comparative policy", "Menstrual governance", "Public health", "Institutional frameworks"]
+    },
+    {
+      title: "Governance and Women's Political Participation in India",
+      tags: ["Political participation", "Representation", "Institutions", "Democratic governance"]
     }
   ],
-  additionalResearch: [
-    "Governance and Women's Political Participation in India",
-    "Comparative Governance Frameworks for Menstrual Policy"
+  policyAnalysis: [
+    {
+      title: "Future Geopolitics Through the Eyes of Kautilya",
+      tags: ["Geopolitics", "Strategic thought", "International relations", "Indian political thought"]
+    },
+    {
+      title: "Periods and Technology",
+      tags: ["Menstrual health", "Technology", "Gender", "Social change"]
+    }
+  ],
+  professionalWriting: {
+    title: "60+ Research-Based Articles",
+    description: "Published professional writing across communication, public speaking, leadership, language learning and professional development.",
+    url: null
+  },
+  institutionalOutputs: [
+    "Policy briefs and policy notes",
+    "Governance and legislative research notes",
+    "Analytical and research reports",
+    "Research summaries",
+    "Concept notes",
+    "CSR and partnership proposals",
+    "Donor-facing reports",
+    "Programme documentation",
+    "Executive presentations",
+    "Policy recommendations",
+    "Advocacy and strategic communication materials"
+  ],
+  frameworks: [
+    {
+      title: "Plastic Footprint Assessment Methodology for Sustainable Menstrual Products",
+      tags: ["Impact Assessment", "Sustainability", "Methodology Development"],
+      description: "Developed an evidence-based assessment framework to estimate reductions in plastic footprint associated with the adoption of reusable menstrual products, including cloth pads and menstrual cups. The methodology was subsequently applied across partnership proposals, executive presentations and advocacy resources."
+    }
   ]
 };
