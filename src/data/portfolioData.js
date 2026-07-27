@@ -8,15 +8,15 @@ export const personalInfo = {
 };
 
 export const areasOfInterest = [
-  { icon: "building", label: "Public Policy" },
-  { icon: "users", label: "Governance" },
-  { icon: "settings", label: "Public Systems" },
-  { icon: "heart", label: "Gender Equality" },
-  { icon: "activity", label: "Public Health" },
-  { icon: "leaf", label: "Sustainability" },
-  { icon: "vote", label: "Democracy" },
-  { icon: "message-circle", label: "Strategic Communications" },
-  { icon: "building-2", label: "Institution Building" }
+  { icon: "policy", label: "Public Policy" },
+  { icon: "governance", label: "Governance" },
+  { icon: "systems", label: "Public Systems" },
+  { icon: "gender", label: "Gender Equality" },
+  { icon: "health", label: "Public Health" },
+  { icon: "sustainability", label: "Sustainability" },
+  { icon: "democracy", label: "Democracy" },
+  { icon: "communications", label: "Strategic Communications" },
+  { icon: "institution", label: "Institution Building" }
 ];
 
 export const professionalValues = [
@@ -100,8 +100,8 @@ export const engagements = [
     ],
     keyDeliverables: [
       "Policy briefs",
-      "CSR proposals",
-      "Presentations",
+      { label: "CSR Proposal", url: "https://docs.google.com/document/d/1-7fYJBeK4lgBF7T2TWu7-Co7jX5kGKR6/edit?usp=sharing&ouid=118241530937813636877&rtpof=true&sd=true" },
+      { label: "Presentations & Content Design", url: "https://canva.link/qzom80ebzy1edqi" },
       "Content & Design"
     ],
     outcomes: [
@@ -122,12 +122,12 @@ export const engagements = [
       "Parliamentary publications"
     ],
     keyDeliverables: [
-      "Policy briefs",
+      { label: "Policy Briefs", url: "https://www.instagram.com/p/DTK2AKmk0xX/" },
       "Analytical reports",
       "Research summaries"
     ],
     outcomes: [
-      "Grassroots Policy Branch",
+      { label: "Grassroots Policy Branch", url: "https://www.instagram.com/grassroot_policy/" },
       "Evidence synthesis",
       "Policy recommendations"
     ],
@@ -139,18 +139,18 @@ export const engagements = [
     category: "Leadership & Community Engagement",
     description: "Building community-driven programmes through volunteer leadership and strategic partnerships.",
     approach: [
-      "Community building",
-      "Volunteer leadership",
+      { label: "Community Building", url: "https://www.instagram.com/p/C40VN6IxQyw/" },
+      { label: "Volunteer Leadership", url: "https://www.instagram.com/p/CwWpvJPtXp1/" },
       "Partnerships"
     ],
     keyDeliverables: [
-      "Events",
+      { label: "Events", url: "https://www.instagram.com/reel/C5gC1d-h40I/" },
       "Campaigns",
-      "Stakeholder coordination"
+      { label: "Stakeholder", url: "https://www.instagram.com/p/C4UspxRRIoB/" }
     ],
     outcomes: [
       "Programme execution",
-      "Community impact",
+      { label: "Community Impact", url: "https://www.instagram.com/reel/Cz6PBmuxOaB/" },
       "Institutional partnerships"
     ],
     images: []
@@ -221,6 +221,52 @@ export const engagements = [
     images: []
   }
 ];
+
+export const education = {
+  title: "Education",
+  higherEducation: [
+    {
+      degree: "M.A. Public Policy & Governance",
+      institution: "Amity University",
+      period: "2025–2027",
+      description: "Graduate study focused on public policy analysis, governance, public administration, research methodology and development studies.",
+      details: [
+        "Research Focus: Institutional fragmentation in menstrual product safety regulation in India, examining regulatory coordination, implementation gaps and public-health governance.",
+        "CGPA: 8.75/10"
+      ]
+    },
+    {
+      degree: "Global Diplomacy",
+      institution: "University of London",
+      period: "2025",
+      description: "Specialised study in diplomacy, global governance, international relations and multilateral institutions, with developing interests in Indian foreign policy, geopolitics and international cooperation.",
+      details: [
+        "Focus: Diplomacy · Global Governance · International Relations · Multilateral Institutions"
+      ]
+    },
+    {
+      degree: "B.A. (Hons.) Political Science",
+      institution: "University of Delhi",
+      period: "2021–2024",
+      description: "Academic foundation in political theory, comparative politics, public policy and international relations, complemented by applied experience in electoral research and institutional leadership.",
+      details: [
+        "Selected Experience: Field-based electoral research on the Gujarat Assembly and Delhi Municipal elections · Vice President & Management Team Head, Women's Development Cell"
+      ]
+    }
+  ],
+  earlierEducation: [
+    {
+      label: "CBSE Class XII",
+      score: "97.2%",
+      subjects: "Mathematics · Economics · Political Science · Geography"
+    },
+    {
+      label: "CBSE Class X",
+      score: "95%",
+      subjects: ""
+    }
+  ]
+};
 
 export const publications = {
   title: "Publications & Thought Leadership",

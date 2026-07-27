@@ -1,7 +1,27 @@
+import { useState, useCallback } from 'react';
 import styles from './Contact.module.css';
 import { personalInfo } from '../../data/portfolioData';
 
 function Contact() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopyEmail = useCallback(() => {
+    navigator.clipboard.writeText('simrangoel7561@gmail.com').then(() => {
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }).catch(() => {
+      // fallback for older browsers
+      const textarea = document.createElement('textarea');
+      textarea.value = 'simrangoel7561@gmail.com';
+      document.body.appendChild(textarea);
+      textarea.select();
+      document.execCommand('copy');
+      document.body.removeChild(textarea);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    });
+  }, []);
+
   return (
     <section className={styles.contact} id="contact">
       <div className={styles.container}>
@@ -22,13 +42,14 @@ function Contact() {
               LinkedIn
             </a>
             
-            <a 
-              href="mailto:simrangoel7561@gmail.com" 
+            <button 
+              onClick={handleCopyEmail}
               className={styles.contactButton}
+              aria-label="Copy email address"
             >
               <span className={styles.icon}>✉️</span>
-              Email
-            </a>
+              {copied ? 'Copied!' : 'Email'}
+            </button>
             
             <a 
               href="/cv.pdf" 
@@ -38,6 +59,11 @@ function Contact() {
               <span className={styles.icon}>📄</span>
               Download CV
             </a>
+          </div>
+
+          <div className={`${styles.copyToast} ${copied ? styles.copyToastVisible : ''}`}>
+            <span className={styles.copyToastIcon}>✓</span>
+            Email copied to clipboard!
           </div>
         </div>
       </div>

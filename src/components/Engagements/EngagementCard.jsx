@@ -31,7 +31,6 @@ function EngagementCard({ engagement }) {
     <div
       ref={cardRef}
       className={`${styles.engagementCard} ${isVisible ? styles.visible : ''}`}
-      onClick={() => setIsExpanded(!isExpanded)}
     >
       <div className={styles.cardHeader}>
         <span className={styles.category}>{engagement.category}</span>
@@ -44,7 +43,16 @@ function EngagementCard({ engagement }) {
           <h4 className={styles.detailTitle}>Approach</h4>
           <ul className={styles.detailList}>
             {engagement.approach.map((item, idx) => (
-              <li key={idx}>{item}</li>
+              <li key={idx}>
+                {typeof item === 'object' && item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                    {item.label}
+                    <span className={styles.inlineLinkIcon} aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  item
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -53,7 +61,16 @@ function EngagementCard({ engagement }) {
           <h4 className={styles.detailTitle}>Key Deliverables</h4>
           <ul className={styles.detailList}>
             {engagement.keyDeliverables.map((item, idx) => (
-              <li key={idx}>{item}</li>
+              <li key={idx}>
+                {typeof item === 'object' && item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                    {item.label}
+                    <span className={styles.inlineLinkIcon} aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  item
+                )}
+              </li>
             ))}
           </ul>
         </div>
@@ -62,13 +79,28 @@ function EngagementCard({ engagement }) {
           <h4 className={styles.detailTitle}>Outcomes</h4>
           <ul className={styles.detailList}>
             {engagement.outcomes.map((item, idx) => (
-              <li key={idx}>{item}</li>
+              <li key={idx}>
+                {typeof item === 'object' && item.url ? (
+                  <a href={item.url} target="_blank" rel="noopener noreferrer" className={styles.inlineLink}>
+                    {item.label}
+                    <span className={styles.inlineLinkIcon} aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  item
+                )}
+              </li>
             ))}
           </ul>
         </div>
       </div>
 
-      <button className={styles.expandButton}>
+      <button
+        className={styles.expandButton}
+        onClick={(e) => {
+          e.stopPropagation();
+          setIsExpanded(!isExpanded);
+        }}
+      >
         {isExpanded ? 'Show Less' : 'Show More'}
       </button>
     </div>

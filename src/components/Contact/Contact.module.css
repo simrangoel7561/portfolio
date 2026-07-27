@@ -51,9 +51,12 @@
   background: #1F365C;
   color: #ffffff;
   text-decoration: none;
+  border: none;
   border-radius: 8px;
   font-weight: 500;
   font-size: 1rem;
+  font-family: inherit;
+  cursor: pointer;
   transition: all 0.3s ease;
   box-shadow: 0 4px 12px rgba(31, 54, 92, 0.2);
 }
@@ -66,6 +69,34 @@
 
 .icon {
   font-size: 1.25rem;
+}
+
+/* Copy Toast */
+.copyToast {
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.25rem;
+  background: #1F365C;
+  color: #ffffff;
+  border-radius: 8px;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+}
+
+.copyToastVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.copyToastIcon {
+  font-size: 1rem;
+  font-weight: 700;
 }
 
 /* Responsive */

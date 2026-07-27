@@ -40,7 +40,6 @@
   padding: 2rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
   opacity: 0;
   transform: translateY(30px);
 }
@@ -136,6 +135,33 @@
   left: 0;
   color: #8C3B52;
   font-weight: bold;
+}
+
+.inlineLink {
+  color: #1F365C;
+  text-decoration: none;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  border-bottom: 1px solid transparent;
+  transition: all 0.2s ease;
+}
+
+.inlineLink:hover {
+  color: #8C3B52;
+  border-bottom-color: #8C3B52;
+}
+
+.inlineLinkIcon {
+  font-size: 0.7rem;
+  opacity: 0.5;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.inlineLink:hover .inlineLinkIcon {
+  opacity: 1;
+  transform: translate(1px, -1px);
 }
 
 .expandButton {
